@@ -10,7 +10,9 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:hello-world.helloWorld"
+        "onCommand:hello-world.helloWorld",
+		"onCommand:hello-world.helloWorld2",
+		"onCommand:hello-world.helloWorld3"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -18,8 +20,31 @@
 			{
 				"command": "hello-world.helloWorld",
 				"title": "Hello World"
+			},
+			{
+				"command": "hello-world.helloWorld2",
+				"title": "Hello World 2"
+			},
+			{
+				"command": "hello-world.helloWorld3",
+				"title": "Hello World 3"
 			}
-		]
+		],
+		"keybindings": [{
+			"key": "ctrl+shift+1",
+			"command": "hello-world.helloWorld",
+			"when": "editorTextFocus"
+		},
+		{
+			"key": "ctrl+shift+2",
+			"command": "hello-world.helloWorld2",
+			"when": "editorTextFocus"
+		},
+		{
+			"key": "ctrl+shift+3",
+			"command": "hello-world.helloWorld3",
+			"when": "editorTextFocus"
+		}]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run package",
